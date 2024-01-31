@@ -21,4 +21,5 @@ A simple and intuitive ToDo web application built using React. This project aims
 
 ## Feedback and Support
 
-For bug reports, feature requests, or general feedback, please open an issue. Feel free to reach out to us on [Gmail](ashish23bisht@gmail.com) for additional support.
+For bug reports, feature requests, or general feedback, please open an issue. Feel free to reach out to us on<a href="mailto:ashish23bisht@gmail.com">Gmail</a> for additional support.
+

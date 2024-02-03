@@ -26,13 +26,10 @@ function App () {
 
   useEffect (() => {
     let savedTodos = JSON.parse (localStorage.getItem ('todolist'));
-    let savedCompletedToDos = JSON.parse (
-      localStorage.getItem ('completedTodos')
-    );
+    let savedCompletedToDos = JSON.parse (localStorage.getItem ('completedTodos'));
     if (savedTodos) {
       setAllTodos (savedTodos);
     }
-
     if (savedCompletedToDos) {
       setCompletedTodos (savedCompletedToDos);
     }
@@ -42,7 +39,6 @@ function App () {
     let reducedTodos = [...allTodos];
     reducedTodos.splice (index,1);
     // console.log (index);
-
     // console.log (reducedTodos);
     localStorage.setItem ('todolist', JSON.stringify (reducedTodos));
     setAllTodos (reducedTodos);
@@ -54,7 +50,7 @@ function App () {
     // console.log (reducedCompletedTodos);
     localStorage.setItem (
       'completedTodos',
-      JSON.stringify (reducedCompletedTodos)
+      JSON.stringify (reducedCompletedTodos)    
     );
     setCompletedTodos (reducedCompletedTodos);
   };
@@ -74,27 +70,22 @@ function App () {
       ...allTodos[index],
       completedOn: finalDate,
     };
-
     // console.log (filteredTodo);
-
     let updatedCompletedList = [...completedTodos, filteredTodo];
-    console.log (updatedCompletedList);
+    // console.log (updatedCompletedList);
     setCompletedTodos (updatedCompletedList);
     localStorage.setItem (
       'completedTodos',
       JSON.stringify (updatedCompletedList)
     );
     // console.log (index);
-
     handleToDoDelete (index);
   };
 
   return (
     <div className="App">
       <h1>My Todos</h1>
-
       <div className="todo-wrapper">
-
         <div className="todo-input">
           <div className="todo-input-item">
             <label>Title:</label>
@@ -127,14 +118,12 @@ function App () {
         <div className="btn-area">
           <button
             className={`secondaryBtn ${isCompletedScreen === false && 'active'}`}
-            onClick={() => setIsCompletedScreen (false)}
-          >
+            onClick={() => setIsCompletedScreen (false)}>
             To Do
           </button>
           <button
             className={`secondaryBtn ${isCompletedScreen === true && 'active'}`}
-            onClick={() => setIsCompletedScreen (true)}
-          >
+            onClick={() => setIsCompletedScreen (true)}>
             Completed
           </button>
         </div>
@@ -146,7 +135,6 @@ function App () {
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
-
                 </div>
                 <div>
                   <AiOutlineDelete
